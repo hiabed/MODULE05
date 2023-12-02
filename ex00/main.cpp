@@ -40,4 +40,5 @@ int main()
         std::cerr << e.what() << '\n';
     }
     std::cout << "end\n";
+    std::cout << b;
 }
