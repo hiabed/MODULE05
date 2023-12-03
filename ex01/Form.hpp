@@ -7,28 +7,29 @@ class Form
 {
 private:
     const std::string _name;
-    bool _signed;
+    bool _isSigned;
     const int _gradeToSign;
     const int _gradeToExecute;
 public:
     Form();
-    Form(std::string name, bool _signed, int gradeToSign, int gradeToExecute);
+    Form(std::string name, int gradeToSign, int gradeToExecute);
     Form(const Form &other);
     Form &operator=(const Form &other);
     const std::string getName() const;
     bool isSigned() const;
     const int getGradeToSign() const;
     const int getGradeToExecute() const;
-    class GradeTooHighException: public Bureaucrat::GradeTooHighException
+    class GradeTooHighException : public std::exception
     {
-        //optional;
+    public:
+        const char *what() const throw();
     };
-    class GradeTooLowException: public Bureaucrat::GradeTooLowException
+    class GradeTooLowException: public std::exception
     {
-        //optional;
+    public:
+        const char *what() const throw();
     };
     ~Form();
 };
 
 #endif
-
