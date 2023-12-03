@@ -2,11 +2,11 @@
 
 int main()
 {
+    Bureaucrat b("Abed", 25);
     try
     {
-        Bureaucrat b("Abed", 25);
-        Form f("Form1", 20, 1);
-        f.beSigned(b);
+        Form f("Form1", 30, 1);
+        b.signForm(f);
     }
     catch(std::exception &e)
     {
@@ -15,8 +15,7 @@ int main()
     std::cout << "continue\n";
     try
     {
-        Bureaucrat b("Abed", 25);
-        Form f("Form1", 20, 1);
+        Form f("Form2", 20, 1);
         b.signForm(f);
     }
     catch(std::exception &e)
@@ -26,9 +25,8 @@ int main()
     std::cout << "continue1\n";
     try
     {
-        Bureaucrat b("Abed", 20);
-        Form f("Form1", 30, 1);
-        b.signForm(f);
+        Form f("Form3", 20, 1);
+        f.beSigned(b);
     }
     catch(std::exception &e)
     {
