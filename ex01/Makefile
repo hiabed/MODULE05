@@ -4,7 +4,7 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-CXXFILES = main.cpp Bureaucrat.cpp \
+CXXFILES = main.cpp Bureaucrat.cpp Form.cpp \
 
 OBJ = ${CXXFILES:.cpp=.o}
 

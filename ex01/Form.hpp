@@ -17,8 +17,8 @@ public:
     Form &operator=(const Form &other);
     const std::string getName() const;
     bool isSigned() const;
-    const int getGradeToSign() const;
-    const int getGradeToExecute() const;
+    int getGradeToSign() const;
+    int getGradeToExecute() const;
     class GradeTooHighException : public std::exception
     {
     public:
