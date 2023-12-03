@@ -1,52 +1,38 @@
-#include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main()
 {
     try
     {
-        Bureaucrat a("Thomas", 151);
+        Bureaucrat b("Abed", 25);
+        Form f("Form1", 20, 1);
+        f.beSigned(b);
     }
     catch(std::exception &e)
     {
         std::cerr << e.what() << '\n';
     }
-    std::cout << "continue1\n"; // this message will displayed in both cases;
-    Bureaucrat b("Thomas", 150);
+    std::cout << "continue\n";
     try
     {
-        b.decrementGrade();
+        Bureaucrat b("Abed", 25);
+        Form f("Form1", 20, 1);
+        b.signForm(f);
     }
     catch(std::exception &e)
     {
         std::cerr << e.what() << '\n';
     }
-    std::cout << "continue2\n";
-    Bureaucrat c("Thomas", 1);
+    std::cout << "continue1\n";
     try
     {
-        c.incrementGrade();
+        Bureaucrat b("Abed", 20);
+        Form f("Form1", 30, 1);
+        b.signForm(f);
     }
-    catch (std::exception &e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
-    std::cout << "continue3\n";
-    try
-    {
-        c.decrementGrade();
-    }
-    catch(const std::exception& e)
+    catch(std::exception &e)
     {
         std::cerr << e.what() << '\n';
     }
-    Bureaucrat me;
-    std::cout << me;
-    ///////////////
-    std::cout << b;
-    //////////////
-    Bureaucrat k("Jack", 20);
-    Bureaucrat l = k;
-    std::cout << l;
-    //////////////
     std::cout << "end\n";
 }

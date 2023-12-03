@@ -19,17 +19,12 @@ public:
     bool isSigned() const;
     int getGradeToSign() const;
     int getGradeToExecute() const;
-    class GradeTooHighException : public std::exception
-    {
-    public:
-        const char *what() const throw();
-    };
-    class GradeTooLowException: public std::exception
-    {
-    public:
-        const char *what() const throw();
-    };
+    void beSigned(Bureaucrat &b);
+    class GradeTooHighException : public Bureaucrat::GradeTooHighException {};
+    class GradeTooLowException: public Bureaucrat::GradeTooLowException {};
     ~Form();
 };
+
+std::ostream &operator<<(std::ostream &output, Form &obj);
 
 #endif

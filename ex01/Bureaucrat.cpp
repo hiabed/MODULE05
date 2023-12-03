@@ -1,8 +1,8 @@
-#include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(): _name("Abed")
 {
-    _grade = 1; // lowest grade;
+    _grade = 1; // highest grade;
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade): _name(name)
@@ -82,7 +82,25 @@ std::ostream &operator<<(std::ostream &output, Bureaucrat &obj)
     return output;
 }
 
+void Bureaucrat::signForm(Form &form)
+{
+    try
+    {
+        if (form.isSigned() == true)
+            std::cout << getName() << " signed " << form.getName() << std::endl;
+        else
+        {
+            Form::GradeTooLowException low;
+            throw (low);
+        }
+    }
+    catch (const std::exception &e)
+    {
+        std::cout << getName() << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+    }
+}
+
 Bureaucrat::~Bureaucrat()
 {
-    std::cout << "Destructor called\n";
+    std::cout << "Bureaucrat Destructor called\n";
 }
