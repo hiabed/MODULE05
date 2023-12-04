@@ -21,7 +21,7 @@ public:
     int getGradeToExecute() const;
     void beSigned(Bureaucrat &b);
     class GradeTooHighException : public Bureaucrat::GradeTooHighException {};
-    class GradeTooLowException: public Bureaucrat::GradeTooLowException {};
+    class GradeTooLowException : public Bureaucrat::GradeTooLowException {};
     ~Form();
 };
 
