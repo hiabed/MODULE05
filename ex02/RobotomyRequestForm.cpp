@@ -24,6 +24,28 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &o
     return *this;
 }
 
+void RobotomyRequestForm::execute(Bureaucrat const &executer) const
+{
+    if (isSigned() && executer.getGrade() > 45)
+    {
+        GradeTooLowException low;
+        throw (low);
+    }
+    else
+    {
+        std::cout << "WRRRRRR!! ";
+        srand(time(0));
+        if (rand() % 2 == 0)
+        {
+            std::cout << _target << " has been robotomized successfully\n";
+        }
+        else
+        {
+            std::cout << "the robotomy failed.\n";
+        }
+    }
+}
+
 RobotomyRequestForm::~RobotomyRequestForm()
 {
     // destructor;
