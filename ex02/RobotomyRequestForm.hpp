@@ -9,6 +9,7 @@ private:
 
 public:
     RobotomyRequestForm();
+    RobotomyRequestForm(AForm &target);
     RobotomyRequestForm(const RobotomyRequestForm &other);
     RobotomyRequestForm& operator=(const RobotomyRequestForm &other);
     ~RobotomyRequestForm();

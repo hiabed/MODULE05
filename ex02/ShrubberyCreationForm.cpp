@@ -2,7 +2,12 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm()
 {
+    // default constructor;
+}
 
+ShrubberyCreationForm::ShrubberyCreationForm(AForm &target)
+{
+    (void)target;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other)

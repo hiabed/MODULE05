@@ -2,7 +2,12 @@
 
 RobotomyRequestForm::RobotomyRequestForm()
 {
+    // default constructor;
+}
 
+RobotomyRequestForm::RobotomyRequestForm(AForm &target)
+{
+    (void)target;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other)

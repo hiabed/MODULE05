@@ -2,7 +2,12 @@
 
 PresidentialPardonForm::PresidentialPardonForm()
 {
+    // default constructor;
+}
 
+PresidentialPardonForm::PresidentialPardonForm(AForm &target)
+{
+    (void)target;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &other)

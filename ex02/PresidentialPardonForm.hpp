@@ -9,6 +9,7 @@ private:
     
 public:
     PresidentialPardonForm();
+    PresidentialPardonForm(AForm &target);
     PresidentialPardonForm(const PresidentialPardonForm &other);
     PresidentialPardonForm &operator=(const PresidentialPardonForm &other);
     ~PresidentialPardonForm();
