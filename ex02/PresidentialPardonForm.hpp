@@ -3,7 +3,7 @@
 
 #include "AForm.hpp"
 
-class PresidentialPardonForm : public Aform
+class PresidentialPardonForm : public AForm
 {
 private:
     
