@@ -22,6 +22,7 @@ public:
     void beSigned(Bureaucrat &b);
     class GradeTooHighException : public Bureaucrat::GradeTooHighException {};
     class GradeTooLowException: public Bureaucrat::GradeTooLowException {};
+    virtual void execute(Bureaucrat const & executor) const = 0; // pure virtual function for abstract class;
     ~AForm();
 };
 
