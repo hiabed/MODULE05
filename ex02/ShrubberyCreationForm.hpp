@@ -9,11 +9,11 @@ private:
     std::string _target;
 public:
     ShrubberyCreationForm();
-    ShrubberyCreationForm(AForm &target);
+    ShrubberyCreationForm(std::string &target);
     ShrubberyCreationForm(const ShrubberyCreationForm& to_copy);
     ShrubberyCreationForm &operator=(const ShrubberyCreationForm &original);
     void execute(Bureaucrat const & executor) const;
-    ~ShrubberyCreationForm(void);
+    ~ShrubberyCreationForm();
 };
 
 #endif

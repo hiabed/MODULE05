@@ -101,6 +101,13 @@ void Bureaucrat::signForm(AForm &Aform)
     }
 }
 
+void Bureaucrat::executeForm(AForm const & form)
+{
+    if (form.isSigned())
+        std::cout << getName() << " executed " << form.getName() << std::endl;
+
+}
+
 Bureaucrat::~Bureaucrat()
 {
     std::cout << "Bureaucrat Destructor called\n";

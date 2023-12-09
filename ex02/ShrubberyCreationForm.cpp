@@ -5,9 +5,9 @@ ShrubberyCreationForm::ShrubberyCreationForm()
     // default constructor;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(AForm &target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string &target)
 {
-    (void)target;
+    _target = target;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other)
