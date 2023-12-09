@@ -3,7 +3,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
-Intern::Intern(/* args */)
+Intern::Intern()
 {
 }
 

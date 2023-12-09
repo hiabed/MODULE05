@@ -10,7 +10,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("Shrubb
     _target = target;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other) : AForm(other)
 {
     *this = other;
 }
@@ -19,7 +19,7 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 {
     if (this != &other)
     {
-        // assignements;
+        this->_target = other._target;
     }
     return *this;
 }
@@ -36,12 +36,12 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executer) const
         std::ofstream file(_target + "_shrubbery");
         if (file.is_open()) 
         {
-            file << "    **         **         **" << std::endl;
-            file << "   ****       ****       ****" << std::endl;
-            file << "  ******     ******     ******" << std::endl;
-            file << " ********   ********   ********" << std::endl;
+            file << "    **         **         **"     << std::endl;
+            file << "   ****       ****       ****"    << std::endl;
+            file << "  ******     ******     ******"   << std::endl;
+            file << " ********   ********   ********"  << std::endl;
             file << "********** ********** **********" << std::endl;
-            file << "    ||         ||         ||" << std::endl;
+            file << "    ||         ||         ||"     << std::endl;
             file.close();
             std::cout << "File created successfully: " << _target + "_shrubbery" << std::endl;
         } 
