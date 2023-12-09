@@ -103,5 +103,5 @@ void Bureaucrat::signForm(Form &form)
 
 Bureaucrat::~Bureaucrat()
 {
-    std::cout << "Bureaucrat Destructor called\n";
+    
 }

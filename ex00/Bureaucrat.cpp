@@ -84,5 +84,5 @@ std::ostream &operator<<(std::ostream &output, Bureaucrat &obj)
 
 Bureaucrat::~Bureaucrat()
 {
-    std::cout << "Destructor called\n";
+    
 }
