@@ -22,17 +22,13 @@ Bureaucrat::Bureaucrat(std::string name, int grade): _name(name)
 
 Bureaucrat::Bureaucrat(const Bureaucrat &other): _name(other._name)
 {
-    std::cout << "copy constructor\n";
     *this = other;
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 {
-    std::cout << "copy assignement operator\n";
     if (this != &other)
-    {
         this->_grade = other._grade;
-    }
     return *this;
 }
 
