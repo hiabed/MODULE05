@@ -35,10 +35,10 @@ int main()
     {
         std::cerr << e.what() << '\n';
     }
-    Bureaucrat b1("Brahim", 1);
+    Bureaucrat b1("Brahim", 150);
     try
     {
-        p.beSigned(b1);
+        // p.beSigned(b1);
         b1.executeForm(p);
         p.execute(b1);
         b1.executeForm(r);
