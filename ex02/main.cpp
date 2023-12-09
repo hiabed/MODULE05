@@ -2,7 +2,5 @@
 
 int main()
 {
-    Bureaucrat b("Abed", 25);
-    
-    std::cout << "end\n";
+    Bureaucrat b("Abed", 1);
 }
