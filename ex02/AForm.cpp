@@ -92,5 +92,5 @@ std::ostream &operator<<(std::ostream &output, AForm &obj)
 
 AForm::~AForm()
 {
-    std::cout << "AForm Destructor called\n";
+    
 }

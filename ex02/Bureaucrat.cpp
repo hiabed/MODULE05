@@ -2,7 +2,7 @@
 
 Bureaucrat::Bureaucrat(): _name("Abed")
 {
-    _grade = 1; // highest grade;
+    _grade = 1;
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade): _name(name)
@@ -103,12 +103,13 @@ void Bureaucrat::signForm(AForm &Aform)
 
 void Bureaucrat::executeForm(AForm const & form)
 {
-    if (form.isSigned())
+    if (form.isSigned() && getGrade() <= form.getGradeToExecute())
         std::cout << getName() << " executed " << form.getName() << std::endl;
-
+    else
+        std::cout << getName() << " can't execute the form" << form.getName() << std::endl;
 }
 
 Bureaucrat::~Bureaucrat()
 {
-    std::cout << "Bureaucrat Destructor called\n";
+    
 }

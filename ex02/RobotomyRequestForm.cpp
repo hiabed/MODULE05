@@ -1,11 +1,11 @@
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm()
+RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45)
 {
-    // default constructor;
+    _target = "AbedR";
 }
 
-RobotomyRequestForm::RobotomyRequestForm(AForm &target)
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45)
 {
     _target = target;
 }
@@ -26,7 +26,7 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &o
 
 void RobotomyRequestForm::execute(Bureaucrat const &executer) const
 {
-    if (isSigned() && executer.getGrade() > 45)
+    if (!isSigned() || executer.getGrade() > getGradeToExecute())
     {
         GradeTooLowException low;
         throw (low);

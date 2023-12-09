@@ -1,11 +1,11 @@
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm()
+PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm", 25, 5)
 {
-    // default constructor;
+    _target = "AbedP";
 }
 
-PresidentialPardonForm::PresidentialPardonForm(AForm &target)
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", 25, 5)
 {
     _target = target;
 }
@@ -26,7 +26,7 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPard
 
 void PresidentialPardonForm::execute(Bureaucrat const &executer) const
 {
-    if (!isSigned() && executer.getGrade() > 5)
+    if (!isSigned() || executer.getGrade() > getGradeToExecute())
     {
         GradeTooLowException low;
         throw (low);
@@ -37,5 +37,4 @@ void PresidentialPardonForm::execute(Bureaucrat const &executer) const
 
 PresidentialPardonForm::~PresidentialPardonForm()
 {
-    // destructor;
 }

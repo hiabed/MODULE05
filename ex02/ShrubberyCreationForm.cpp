@@ -1,11 +1,11 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm()
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137)
 {
-    // default constructor;
+    _target = "AbedS";
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string &target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", 145, 137)
 {
     _target = target;
 }
@@ -24,28 +24,9 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
     return *this;
 }
 
-void printSpaces(std::ofstream& file, int n)
-{
-    for (int i = 0; i < n; ++i) 
-        file << " ";
-}
-
-void printTree(std::ofstream& file)
-{
-    const int treeHeight = 5;
-
-    for (int i = 0; i < treeHeight; ++i)
-    {
-        printSpaces(file, treeHeight - i - 1);
-        for (int j = 0; j < 2 * i + 1; ++j)
-            file << "*";
-        file << std::endl;
-    }
-}
-
 void ShrubberyCreationForm::execute(Bureaucrat const &executer) const
 {
-    if (!isSigned() && executer.getGrade() > 137)
+    if (!isSigned() || executer.getGrade() > getGradeToExecute())
     {
         GradeTooLowException low;
         throw (low);
@@ -55,9 +36,14 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executer) const
         std::ofstream file(_target + "_shrubbery");
         if (file.is_open()) 
         {
-            printTree(file);
-            std::cout << "File created successfully: " << _target + "_shrubbery" << std::endl;
+            file << "    **         **         **" << std::endl;
+            file << "   ****       ****       ****" << std::endl;
+            file << "  ******     ******     ******" << std::endl;
+            file << " ********   ********   ********" << std::endl;
+            file << "********** ********** **********" << std::endl;
+            file << "    ||         ||         ||" << std::endl;
             file.close();
+            std::cout << "File created successfully: " << _target + "_shrubbery" << std::endl;
         } 
         else
             std::cerr << "Error creating file: " << _target + "_shrubbery" << std::endl;
