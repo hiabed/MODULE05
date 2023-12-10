@@ -32,5 +32,7 @@ int main()
     {
         std::cerr << e.what() << '\n';
     }
+    Form print("printed form", 20, 2);
+    std::cout << print << std::endl;
     std::cout << "end\n";
 }

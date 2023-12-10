@@ -25,7 +25,7 @@ AForm *Intern::makeForm(std::string name, std::string target)
         "presidential pardon",
         "shrubbery creation"
     };
-    AForm *forms[] = {
+    AForm *forms[3] = {
         new RobotomyRequestForm (target),
         new PresidentialPardonForm (target),
         new ShrubberyCreationForm (target)
@@ -35,10 +35,23 @@ AForm *Intern::makeForm(std::string name, std::string target)
         if (name == form_names[i])
         {
             std::cout << "Intern creates " << name << std::endl;
+            for (int j = 0; j < 3; j++)
+            {
+                if (i != j)
+                {
+                    delete forms[j];
+                    forms[j] = NULL;
+                }
+            }
             return forms[i];
         }
     }
     std::cout << "Intern can't create the " << name << std::endl;
+    for (int i = 0; i < 3; i++)
+    {
+        delete forms[i];
+        forms[i] = NULL;
+    }
     return NULL;
 }
 

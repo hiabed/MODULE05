@@ -3,6 +3,8 @@
 #include "PresidentialPardonForm.hpp"
 #include "Intern.hpp"
 
+
+
 int main()
 {
     Bureaucrat b("Abed", 1);
@@ -15,12 +17,18 @@ int main()
     rrf = someRandomIntern.makeForm("presidential pardon", "Bender");
     try
     {
+        if (!rrf)
+            throw (0);
         rrf->beSigned(b);
         rrf->execute(b);
     }
     catch(std::exception& e)
     {
         std::cerr << e.what() << '\n';
+    }
+    catch (int &i)
+    {
+        std::cerr << "form dosen't existe\n";
     }
     try
     {
