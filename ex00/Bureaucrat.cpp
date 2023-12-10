@@ -2,7 +2,7 @@
 
 Bureaucrat::Bureaucrat(): _name("Abed")
 {
-    _grade = 1; // lowest grade;
+    _grade = 1;
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade): _name(name)

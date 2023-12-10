@@ -26,7 +26,9 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPard
 
 void PresidentialPardonForm::execute(Bureaucrat const &executer) const
 {
-    if (!isSigned() || executer.getGrade() > getGradeToExecute())
+    if (!isSigned())
+        throw (NotSignedException());
+    if (executer.getGrade() > getGradeToExecute())
     {
         GradeTooLowException low;
         throw (low);

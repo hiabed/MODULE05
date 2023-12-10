@@ -79,6 +79,11 @@ void AForm::beSigned(Bureaucrat &b)
     _isSigned = true;
 }
 
+const char *AForm::NotSignedException::what() const throw()
+{
+    return "Form not signed\n";
+}
+
 std::ostream &operator<<(std::ostream &output, AForm &obj)
 {
     output << "***** AForm inAformations *****\n";
